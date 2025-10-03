@@ -19,8 +19,9 @@ public class StickerController {
 
    @GetMapping
    List<Sticker> generateStickers(String prompt) {
-      this.stickerService.generateStickers();
-      return List.of();
+      List<Sticker> stickers = this.stickerService.generateStickers(prompt);
+      System.out.println(stickers);
+      return stickers;
    }
 
 }

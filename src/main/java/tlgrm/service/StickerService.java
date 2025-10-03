@@ -4,21 +4,20 @@ import java.util.List;
 
 import org.springframework.stereotype.Service;
 
-import tlgrm.config.OpenAPIConfig;
 import tlgrm.model.Sticker;
 
 @Service
 public class StickerService {
 
-   OpenAPIConfig openAPIConfig;
+   ChatGPTService chatGPTService;
 
-   public StickerService(OpenAPIConfig openAPIConfig) {
-      this.openAPIConfig = openAPIConfig;
+   public StickerService(ChatGPTService chatGPTService) {
+      this.chatGPTService = chatGPTService;
    }
 
-   public List<Sticker> generateStickers() {
-      System.out.println(openAPIConfig.getOpenapi_secret());
-      return null;
+   public List<Sticker> generateStickers(String prompt) {
+      var sticker = chatGPTService.generateStickers(prompt);
+      return List.of(sticker);
    }
 
 }

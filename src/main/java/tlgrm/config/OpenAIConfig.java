@@ -4,7 +4,7 @@ import org.springframework.beans.factory.annotation.Value;
 import org.springframework.context.annotation.Configuration;
 
 @Configuration
-public class OpenAPIConfig {
+public class OpenAIConfig {
 
    @Value("${custom.OPENAI_API_KEY}")
    private String openapi_secret;
